@@ -8,11 +8,9 @@
             double seed = rnd.NextDouble();
             List<Character> characters = new List<Character>();
             Character c = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            Character c2 = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            Character c3 = new Character() { Name = "CharTest", X = 0, Y = 0 };
+
             characters.Add(c);
-            characters.Add(c2);
-            characters.Add(c3);
+
             for (int i = 0; i < 10; i++)
             {
                 characters.Add(new Character() { Name = "Char_" + i.ToString(), X = i, Y = i });
@@ -51,10 +49,10 @@
             Console.WriteLine(max);
 
 
-            Pokemon p = new Pokemon(100, "Pikachu");
-            
-         
-            
+            Wolfs Wolf1 = new Wolfs();
+
+
+
 
 
             List<int> list = new List<int>();
@@ -70,8 +68,24 @@
             }
         }
     }
-    class Pokemon
-    {
+
+    class Wolfs
+    { public string Name { get; set; }
+        public class Wolf
+        {
+            public int Attak;
+            public int Armor;
+            public int Agility;
+
+            public Wolf(int health, string name)
+            {
+                Health = health;
+                Name = name;
+                Attak = 70;
+                Armor = 80;
+                Agility = 100;
+            }
+        }
         private int _health;
 
         public int X { get; private set; }
@@ -91,12 +105,7 @@
             }
         }
 
-        public string Name { get; set; }
-        public Pokemon(int health, string name)
-        {
-            Health = health;
-            Name = name;
-        }
+       
 
         public void Move(int direction)
         {
@@ -119,32 +128,33 @@
         }
     }
 
-        class Character
+    class Character
+    {
+        public string Name;
+        public int X;
+        public int Y;
+
+
+        public void Move(int dir)
         {
-            public string Name;
-            public int X;
-            public int Y;
-
-
-            public void Move(int dir)
+            if (dir == 0)
             {
-                if (dir == 0)
-                {
-                    X += 1;
-                }
-                else if (dir == 1)
-                {
-                    Y += 1;
-                }
-                if (dir == 2)
-                {
-                    X -= 1;
-                }
-                if (dir == 3)
-                {
-                    Y -= 1;
-                }
-                Console.WriteLine($"Текущее положение персонажа {Name}: {X};{Y}");
+                X += 1;
             }
-        } 
+            else if (dir == 1)
+            {
+                Y += 1;
+            }
+            if (dir == 2)
+            {
+                X -= 1;
+            }
+            if (dir == 3)
+            {
+                Y -= 1;
+            }
+            Console.WriteLine($"Текущее положение персонажа {Name}: {X};{Y}");
+        }
+    }
+    
 }
