@@ -8,9 +8,11 @@
             double seed = rnd.NextDouble();
             List<Character> characters = new List<Character>();
             Character c = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            //Character c2 = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            //Character c3 = new Character() { Name = "CharTest", X = 0, Y = 0 };
+            Character c2 = new Character() { Name = "CharTest", X = 0, Y = 0 };
+            Character c3 = new Character() { Name = "CharTest", X = 0, Y = 0 };
             characters.Add(c);
+            characters.Add(c2);
+            characters.Add(c3);
             for (int i = 0; i < 10; i++)
             {
                 characters.Add(new Character() { Name = "Char_" + i.ToString(), X = i, Y = i });
@@ -46,10 +48,11 @@
                 if (ch.X > max)
                     max = ch.X;
             }
+            Console.WriteLine(max);
 
 
             Pokemon p = new Pokemon(100, "Pikachu");
-            Console.WriteLine(p.Health);
+            
          
             
 
