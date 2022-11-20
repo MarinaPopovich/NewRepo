@@ -1,91 +1,117 @@
-﻿namespace Домашнее_задание_Класс_существа_
+﻿using static Домашнее_задание_Класс_существа_.Wolfs;
+
+namespace Домашнее_задание_Класс_существа_
 {
     internal class Program
     {
         static Random rnd = new Random();
         static void Main()
         {
-            double seed = rnd.NextDouble();
-            List<Character> characters = new List<Character>();
-            Character c = new Character() { Name = "CharTest", X = 0, Y = 0 };
+            int seed = rnd.Next(0,100);
 
-            characters.Add(c);
 
-            for (int i = 0; i < 10; i++)
+            List<int>  = new List<Age>();
+            List<Wolfs> Wolf = new List<Wolf>();
+            Wolf c = new Wolfs() { Name = "Wolf1", X = 0, Y = 0 };
+            Wolf c2 = new Wolfs() { Name = "Wolf2", X = 0, Y = 0 };
+            Wolf c3 = new Wolfs() { Name = "Wolf3", X = 0, Y = 0 };
+            Wolf.Add(c);
+            for (int i = 0; i < 100; i++)
             {
-                characters.Add(new Character() { Name = "Char_" + i.ToString(), X = i, Y = i });
+                Console.WriteLine($"{i}-й элемент списка: {Wolf{i}}");
+                Wolfs.Add(new Wolfs() { Name = "Wolf_" + i.ToString(), X = i, Y = i });
             }
 
-            foreach (Character character in characters)
-                character.Move(0);
-            int[] array = new int[] { 1, 2, 3, 5, 10, 12 };
-            characters = new List<Character>() { c };
-            characters.Insert(0, c);
+            foreach (Wolfs Wolfs in Wolf)
+           
+            int max = Wolf[100].X;
 
-            //List<int> salaries = new List<int>() { 100, 200, 95, 100000, 5500 };
+            foreach (Wolfs Wf in Wolf)
+            {
+                if (Wf.X > max)
+                    max = Wf.X;
+            } //    Wolfs.Move(0);
 
-            //int max = salaries.First();
-
-            //foreach (int s in salaries)
+            //    Console.WriteLine( seed.ToString());
+            //List<int> list = new List<int>();
+            //List<int> bufferList = new List<int>();
+            //foreach (int e in list)
             //{
-            //    if (max < s)
-            //        max = s;
+            //    if (e > 50)
+            //        bufferList.Add(e);
+            //}
+            //foreach (int dE in bufferList)
+            //{
+            //    list.Remove(dE);
+            //}
+
+            //List<Age> Ages = new List<Age>();
+            //Age c = new Age() { Name = "CharTest", X = 0, Y = 0 };
+
+            //Ages.Add(c);
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Ages.Add(new Age() { Name = "Char_" + i.ToString(), X = i, Y = i });
+            //}
+
+            //foreach (Age Age in Ages)
+            //    Age.Move(0);
+            //int[] array = new int[] { 1, 2, 3, 5, 10, 12 };
+            //Ages = new List<Age>() { c };
+            //Ages.Insert(0, c);
+
+            //int max = Ages[0].X;
+
+            //foreach (Age ag in Ages)
+            //{
+            //    if (ag.X > max)
+            //        max = ag.X;
             //}
             //Console.WriteLine(max);
-            //List<Character> characters = new List<Character>();
-            //Character c = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            //Character c2 = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            //Character c3 = new Character() { Name = "CharTest", X = 0, Y = 0 };
-            //characters.Add(c);
-            //characters.Add(c2);
-            //characters.Add(c3);
-            int max = characters[0].X;
-
-            foreach (Character ch in characters)
-            {
-                if (ch.X > max)
-                    max = ch.X;
-            }
-            Console.WriteLine(max);
 
 
-            Wolfs Wolf1 = new Wolfs();
+            //Wolfs Wolf1 = new Wolfs();
 
 
 
 
 
-            List<int> list = new List<int>();
-            List<int> bufferList = new List<int>();
-            foreach (int e in list)
-            {
-                if (e > 50)
-                    bufferList.Add(e);
-            }
-            foreach (int dE in bufferList)
-            {
-                list.Remove(dE);
-            }
+
+            
         }
     }
 
-    class Wolfs
-    { public string Name { get; set; }
-        public class Wolf
-        {
-            public int Attak;
-            public int Armor;
-            public int Agility;
+    //class Wolfs
 
-            public Wolf(int health, string name)
-            {
-                Health = health;
-                Name = name;
-                Attak = 70;
-                Armor = 80;
-                Agility = 100;
-            }
+
+    /*public string  Health { get;  private set; }*/
+
+    public class Wolfs
+    {
+        public int Health;
+        public int Attak;
+        public int Armor;
+        public int maxAge;
+
+        public Wolfs()
+        {
+            Health = 100;
+            Attak = 70;
+            Armor = 80;
+            Age = 1;
+            maxAge = 100;
         }
+
+        //public Wolfs(int health, string name)
+        //{
+        //    Health = health;
+        //    Name = name;
+            
+
+
+        //}
+        public string Name { get; set; }
         private int _health;
 
         public int X { get; private set; }
@@ -105,7 +131,7 @@
             }
         }
 
-       
+
 
         public void Move(int direction)
         {
@@ -127,8 +153,7 @@
             }
         }
     }
-
-    class Character
+    class Age
     {
         public string Name;
         public int X;
@@ -156,5 +181,5 @@
             Console.WriteLine($"Текущее положение персонажа {Name}: {X};{Y}");
         }
     }
-    
 }
+
