@@ -1,98 +1,52 @@
-﻿namespace Домашняя_работа_Character_
+﻿namespace Lesson6
 {
     internal class Program
     {
         static void Main()
         {
+           
+        }
+    }
+    namespace Lesson6
+    {
+        internal class Program
+        {
+            static void Main()
+            {
+
+            }
+        }
+        public class Person
+        {
+
+
+            private string Name { get; set; }
+            public string name { get; set; }
+            private string Surname { get; set; }
+            private int Age { get; set; }
+            public int Salary { get; set; }
+            public Person(string name)
+            {
+                this.name = name;
+            }
 
         }
-    }
-    public abstract class Character
-    {
-        public virtual int Health { get; set; }
-        public int Attakc;
-        public int Armor;
-        public Character(int health)
+        public class Scientist : Person
         {
-            Health = health;
-            Attakc = 70;
-            Armor = 80;
-        }
-        public abstract void Attak();
-    }
-    public class Soldier : Character
-    {
-        public int Attack { get; set; }
-        public Soldier(int health) : base(health)
-        {
-            Health = 100;
-        }
-        public override void Attak()
-        {
-            Health -= 2;
-            Console.WriteLine($" Боец актаковал." +
-                $"  здоровье: {Health}");
-        }
-        public class Archer : Character
-        {
-            public Archer(int health) : base(health)
+            public int Academ { get; set; }
+
+            public override string name
             {
-                Health = health;
+                get { return name; }
+                set { name = value; }
             }
-            private int _health;
-            public override int Health
+            public void WriteCharacteristics()
             {
-                get
-                {
-                    return _health;
-                }
-                set
-                {
-                    _health = value;
-                }
-            }
-            public override void Attak()
-            {
-                Health -= 2;
-                Console.WriteLine($" Лучник актаковал." +
-                    $"  здоровье: {Health}");
-            }
-            public void Dodge()
-            {
-                Armor += 10;
-                Console.WriteLine($" Волк увернулся." +
-                    $" защита: {Armor}");
+                Console.WriteLine(" $ Имя: {name} , Фамилия: {Surname}, Возраст: {Age} , Ученая степень: {Academ}, Зарплата: {Salary}");
             }
         }
 
-        public class Shield_Bearer : Archer
-        {
-            public Shield_Bearer(int health) : base(health)
-            {
-                Health = health;
-            }
-            public override void Attak()
-            {
-                Health -= 2;
-                Console.WriteLine($" Щитоносец актаковал." +
-                    $"  здоровье: {Health}");
-            }
-            public void Block()
-            {
-                Health -= 5;
-                this.Health += 20;
-                Console.WriteLine($"Щитоносец блокировал удар." +
-                    $"защита: {Armor}, здоровье: {Health}");
-            }
-        }
+
+
     }
 }
-
-
-//}private int _health;
-//        public override int Health;
-//       {get 
-//            {return _health;
-//}
-//    set
-//        {_health = Value;}}
